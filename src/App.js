@@ -5,27 +5,62 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import {
+
+} from 'react-bootstrap';
+
 import './App.css';
 
 const App = () => (
   <Router>
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-      </ul>
-
-      <hr/>
-
-      <Route exact path="/" component={Home}/>
+    <div className="container-fluid" id="wrapper">
+		<Nav />
+		<Content>
+			<Route exact path="/" component={Home}/>
+		</Content>
     </div>
   </Router>
 )
 
+/*
+const Nav = () => (
+	<nav className="navbar navbar-default navbar-fixed-top">
+		<div className="navbar-header">
+			<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span className="sr-only">Toggle navigation</span>
+				<span className="icon-bar"></span>
+				<span className="icon-bar"></span>
+				<span className="icon-bar"></span>
+			</button>
+		<Link className="navbar-brand" to="/">Blackletter</Link>
+		</div>
+	</nav>
+);
+*/
+
+const Nav = () => (
+	<div id="sidebar-wrapper">
+		<div className="sidebar-nav">
+			<li className="sidebar-brand"><h1>Blackletter</h1></li>
+			<hr />
+			<li className="active"><Link to="/">Events</Link></li>
+			<li><Link to="/">Contacts</Link></li>
+			<hr />
+			<li><Link to="/">Account</Link></li>
+			<li><Link to="/">Log out</Link></li>
+			<hr />
+			<li><Link to="/">Help</Link></li>
+			<li><Link to="/">Share Blackletter</Link></li>
+		</div>
+	</div>
+);
+
+const Content = (props) => (
+	<div>{props.children}</div>
+);
+
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-)
+	<h2></h2>
+);
 
 export default App;
