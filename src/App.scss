@@ -1,0 +1,82 @@
+$color-gold: 		#d4af37;
+$color-dark-gold:	#1f1a08;
+$color-dark-gray:	#161616;
+$color-gray:		#eaeaea;
+$color-off-white:	#fdfdfd;
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: $color-off-white;
+}
+
+h1, .h1, h2, h3, h4, h5, h6 {
+	font-family: 'Playfair Display', serif;
+}
+
+h2 {
+	font-size: 4em;
+	color: $color-dark-gold;
+}
+
+#content {
+	padding: 40px;
+
+	& hr {
+		width: 100%;
+		margin: 15px 0;
+		border-color: $color-dark-gold;
+		border-style: dotted;
+	}
+}
+
+.sidebar-brand {
+	color: $color-gold;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.sidebar-brand h1 {
+	margin: 40px auto;
+	padding: 0;
+	text-indent: 0;
+	text-align: center;
+}
+
+hr {
+	border-color: $color-gold;
+	margin-right: 10px;
+	margin-left: 10px;
+	border-style: groove;
+}
+
+.sidebar-nav a {
+	color: $color-off-white;
+	font-size: 18px;
+}
+
+.sidebar-nav li {
+	border-left: 3px $color-dark-gray solid;
+}
+
+.sidebar-nav li:hover:not(.sidebar-brand) {
+	border-left: 3px $color-gold solid;
+	background-color: $color-dark-gold;
+}
+
+.sidebar-nav li.active {
+	border-left: 3px $color-gold solid;
+}
+
+.btn-blackletter {
+	background: $color-gold;
+	border-color: $color-dark-gold;
+	color: $color-dark-gold;
+}
+
+/*
+	Probably shouldn't do this, but I'm going to anyway.
+*/
+* {
+	border-radius: 1px !important;
+}

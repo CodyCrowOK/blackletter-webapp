@@ -1,52 +1,63 @@
-/*
- Gold: #d4af37
- */
-
-
 body {
-	padding-top: 70px;
-	font-family: 'Open Sans', sans-serif;
-}
+  font-family: 'Open Sans', sans-serif;
+  background: #fdfdfd; }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Playfair Display', serif;
-}
+h1, .h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif; }
+
+h2 {
+  font-size: 4em;
+  color: #1f1a08; }
+
+#content {
+  padding: 40px; }
+  #content hr {
+    width: 100%;
+    margin: 15px 0;
+    border-color: #1f1a08;
+    border-style: dotted; }
 
 .sidebar-brand {
-	color: #d4af37;
-	text-align: center;
-	margin: 0px;
-	padding: 0px;
-}
+  color: #d4af37;
+  text-align: center;
+  margin: 0px;
+  padding: 0px; }
 
 .sidebar-brand h1 {
-	margin: 40px auto;
-	padding: 0;
-	text-indent: 0;
-	text-align: center;
-}
+  margin: 40px auto;
+  padding: 0;
+  text-indent: 0;
+  text-align: center; }
 
 hr {
-	border-color: #d4af37;
-	margin-right: 10px;
-	margin-left: 10px;
-	border-style: groove;
-}
+  border-color: #d4af37;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-style: groove; }
 
 .sidebar-nav a {
-	color: #eee;
-	font-size: 18px;
-}
+  color: #fdfdfd;
+  font-size: 18px; }
 
 .sidebar-nav li {
-	border-left: 5px #000000 solid;
-}
+  border-left: 3px #161616 solid; }
 
 .sidebar-nav li:hover:not(.sidebar-brand) {
-	border-left: 5px #d4af37 solid;
-	background-color: #1f1a08;
-}
+  border-left: 3px #d4af37 solid;
+  background-color: #1f1a08; }
 
 .sidebar-nav li.active {
-	border-left: 5px #d4af37 solid;
-}
+  border-left: 3px #d4af37 solid; }
+
+.btn-blackletter {
+  background: #d4af37;
+  border-color: #1f1a08;
+  color: #1f1a08; }
+
+/*
+	Probably shouldn't do this, but I'm going to anyway.
+*/
+* {
+  border-radius: 1px !important; }
+
+/*# sourceMappingURL=App.css.map */
