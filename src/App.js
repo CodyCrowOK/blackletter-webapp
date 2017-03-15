@@ -12,7 +12,7 @@ import Promise from 'promise-polyfill';
 if (!window.Promise) window.Promise = Promise;
 import 'whatwg-fetch';
 
-import Login from './components/ui/Login';
+import Login from './containers/Login';
 
 import './App.css';
 
@@ -30,7 +30,7 @@ const App = () => (
 );
 
 const Nav = (props) => {
-	const userLinks = props.isAuthenticated ? (
+	const userLinks = props.sessionId ? (
 		<div>
 			<li className="active"><Link to="/events">Events</Link></li>
 			<li><Link to="/contacts">Contacts</Link></li>
