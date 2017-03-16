@@ -11,7 +11,7 @@ import {
 } from 'react-router-dom';
 
 import reducers from './reducers';
-import App from './components/App';
+import AppContainer from './containers/App';
 
 const loggerMiddleware = createLogger();
 let store = createStore(
@@ -24,13 +24,13 @@ let store = createStore(
 
 store.subscribe(() =>
   console.log(store.getState())
-)
+);
 
 
 ReactDOM.render(
 	<Provider store={store}>
 		<Router history={browserHistory}>
-			<Route path="/" component={App} />
+			<Route path="/" component={AppContainer} />
 		</Router>
 	</Provider>,
   document.getElementById('root')

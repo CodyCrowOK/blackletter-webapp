@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const Login = (props) => {
-	const { onSubmit, sessionId } = props;
+	const { onSubmit } = props;
 	return (<div>
 		<h2>Log in</h2>
 		<hr />
@@ -11,7 +11,7 @@ const Login = (props) => {
 			const email = document.querySelector('#email').value;
 			const password = document.querySelector('#password').value;
 
-			return onSubmit(email, password);
+			return onSubmit(email, password, props.history.push);
 		}}>
 			<div className="form-group">
 				<label htmlFor="email">Email address:</label>
@@ -21,16 +21,13 @@ const Login = (props) => {
 				<label htmlFor="password">Password:</label>
 				<input type="password" className="form-control" id="password" placeholder="" />
 			</div>
-			<p>Session ID: {sessionId}</p>
 			<button type="submit" className="btn btn-lg btn-blackletter">Log in</button>
 		</form>
 	</div>);
 };
 
 Login.propTypes = {
-	onSubmit: PropTypes.func.isRequired,
-	sessionId: PropTypes.string,
-	loggedIn: PropTypes.bool
+	onSubmit: PropTypes.func.isRequired
 };
 
 export default Login;

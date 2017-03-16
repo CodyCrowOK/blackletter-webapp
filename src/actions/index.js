@@ -1,12 +1,4 @@
 import api from '../api';
-//
-// export const sendLogin = (email, password) => {
-// 	return {
-// 		type: 'SEND_LOGIN',
-// 		email,
-// 		password
-// 	};
-// };
 
 export const logInUser = (sessionId) => {
 	return {
@@ -33,7 +25,9 @@ export function logIn(email, password) {
 			})
 		})
 		.then(res => res.json())
-		.then(json => dispatch(logInUser(json['session_id'])))
+		.then(json => {
+			dispatch(logInUser(json['session_id']));
+		})
 		.catch(err => dispatch(badLogin(err)));
 	};
 };

@@ -10,8 +10,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onSubmit: (email, password) => {
+		onSubmit: (email, password, push) => {
 			dispatch(logIn(email, password));
+			push('/events');
 		}
 	};
 };

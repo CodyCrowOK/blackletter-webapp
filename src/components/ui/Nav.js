@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
-	const userLinks = props.sessionId ? (
+	const userLinks = props.loggedIn ? (
 		<div>
 			<li className="active"><Link to="/events">Events</Link></li>
 			<li><Link to="/contacts">Contacts</Link></li>

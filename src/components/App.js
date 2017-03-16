@@ -12,15 +12,20 @@ import Events from './ui/Events';
 import Login from '../containers/Login';
 import Nav from './ui/Nav';
 
-const App = () => (
-	<div className="container-fluid" id="wrapper">
-		<Nav />
+const App = (props) => {
+	const { sessionId } = props;
+	const isLogged = !!sessionId;
+	const redirect = !isLogged ? <Redirect from="/" to="/login"/> : <Redirect from="/" to="/events"/>;
+	const contentContent = isLogged ? (<Route path="/events" component={Events}/>) : <Route path="/login" component={Login}/>;
+
+
+	return (<div className="container-fluid" id="wrapper">
+		<Nav loggedIn={sessionId}/>
 		<Content>
-			<Redirect from="/" to="/login"/>
-			<Route path="/login" component={Login}/>
-			<Route path="/events" component={Events}/>
+			{redirect}
+			{contentContent}
 		</Content>
-	</div>
-);
+	</div>);
+};
 
 export default App;
