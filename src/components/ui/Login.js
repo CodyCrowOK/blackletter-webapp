@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 
-const Login = ({ onSubmit }) => (
-	<div>
+const Login = (props) => {
+	const { onSubmit, sessionId } = props;
+	return (<div>
 		<h2>Log in</h2>
 		<hr />
 		<form onSubmit={e => {
@@ -20,13 +21,16 @@ const Login = ({ onSubmit }) => (
 				<label htmlFor="password">Password:</label>
 				<input type="password" className="form-control" id="password" placeholder="" />
 			</div>
+			<p>Session ID: {sessionId}</p>
 			<button type="submit" className="btn btn-lg btn-blackletter">Log in</button>
 		</form>
-	</div>
-);
+	</div>);
+};
 
 Login.propTypes = {
-	onSubmit: PropTypes.func.isRequired
+	onSubmit: PropTypes.func.isRequired,
+	sessionId: PropTypes.string,
+	loggedIn: PropTypes.bool
 };
 
 export default Login;

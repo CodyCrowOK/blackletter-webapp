@@ -1,20 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  browserHistory
+} from 'react-router-dom';
+
 import reducers from './reducers';
+import App from './components/App';
 
-import App from './App';
-
-let store = createStore(reducers);
+const loggerMiddleware = createLogger();
+let store = createStore(
+	reducers,
+	applyMiddleware(
+		thunkMiddleware,
+		loggerMiddleware
+	)
+);
 
 store.subscribe(() =>
   console.log(store.getState())
 )
 
+
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<Router history={browserHistory}>
+			<Route path="/" component={App} />
+		</Router>
 	</Provider>,
   document.getElementById('root')
 );
