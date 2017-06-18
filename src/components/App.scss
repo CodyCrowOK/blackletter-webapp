@@ -74,6 +74,12 @@ hr {
 	color: $color-dark-gold;
 }
 
+.event-list {
+	& > li {
+		margin: 20px;
+	}
+}
+
 /*
 	Probably shouldn't do this, but I'm going to anyway.
 */

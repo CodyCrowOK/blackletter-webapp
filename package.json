@@ -15,6 +15,10 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-standard": "^3.0.1",
     "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.3",
     "redux-devtools": "^3.3.2"
