@@ -7,15 +7,13 @@ import {
 
 import './App.css';
 
-import { validateSession } from '../util';
-
 import Content from './ui/Content';
 import Events from './ui/Events';
 import Login from '../containers/Login';
 import Nav from './ui/Nav';
 
 const App = (props) => {
-	const sessionId = validateSession(props.sessionId);
+	const sessionId = props.sessionId || localStorage.getItem('sessionId');
 	const isLogged = !!sessionId;
 	const redirect = !isLogged ? <Redirect from="/" to="/login"/> : <Redirect from="/" to="/events"/>;
 	const contentContent = isLogged ? (<Route path="/events" component={Events}/>) : <Route path="/login" component={Login}/>;

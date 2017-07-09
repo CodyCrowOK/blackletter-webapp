@@ -26,6 +26,7 @@ export function logIn(email, password) {
 		})
 		.then(res => res.json())
 		.then(json => {
+			localStorage.setItem('sessionId', json['session_id']);
 			dispatch(logInUser(json['session_id']));
 		})
 		.catch(err => dispatch(badLogin(err)));
