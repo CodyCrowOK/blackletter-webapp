@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Events = props => {
-	// const {events} = props;
-	const events = [{'event':1,'name':'Big Wedding','owner':1}];
+	const {events} = props;
+	// const events = [{'event':1,'name':'Big Wedding','owner':1}];
 
 	const noEvents = (
 		<div>You have not created any events yet. <a href="#">Create one.</a></div>
