@@ -8,7 +8,7 @@ import {
 import './App.css';
 
 import Content from './ui/Content';
-import Events from './ui/Events';
+import Events from '../containers/Events';
 import Login from '../containers/Login';
 import Nav from './ui/Nav';
 
