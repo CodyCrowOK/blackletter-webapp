@@ -21,7 +21,7 @@ const Nav = (props) => {
 		<nav>
 			<div id="sidebar-wrapper">
 				<div className="sidebar-nav">
-					<li className="sidebar-brand"><h1>Blackletter</h1></li>
+					<li className="sidebar-brand"><h1>blackletter</h1></li>
 					<hr />
 					{userLinks}
 					<li><Link to="/help">Help</Link></li>
