@@ -26,4 +26,4 @@ export function fetchEvents(userId) {
 			.then(response => response.json())
 			.then(json => dispatch(receiveEvents(userId, json)));
 	};
-}
+};

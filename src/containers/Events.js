@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import EventsComponent from '../components/ui/Events';
-import {userOwnedEvents} from '../api';
 import {fetchEvents} from '../actions';
 
 class AsyncEvents extends Component {
@@ -12,7 +11,7 @@ class AsyncEvents extends Component {
 	}
 
 	getStateFor = props => {
-		this.state = {
+		return {
 			events: props.events
 		};
 	};
@@ -22,16 +21,8 @@ class AsyncEvents extends Component {
 		dispatch(fetchEvents(userId));
 	}
 
-	componentDidUpdate(prevProps) {
-		if (this.props !== prevProps) {
-			const {dispatch, userId} = this.props;
-			dispatch(fetchEvents(userId));
-		}
-	}
-
 	render() {
 		const {events} = this.props;
-		console.log('state', this.state);
 		return (
 			<EventsComponent events={events} />
 		);
@@ -39,7 +30,6 @@ class AsyncEvents extends Component {
 }
 
 const mapStateToProps = (state) => {
-	console.log('"state"', state);
 	return {
 		userId: localStorage.getItem('userId'),
 		events: state.events.events || [],

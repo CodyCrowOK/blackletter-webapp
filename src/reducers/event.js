@@ -1,20 +1,21 @@
 import {
-	RECEIVE_EVENTS,
-	REQUEST_EVENTS
+	RECEIVE_EVENT,
+	REQUEST_EVENT
 } from '../actions';
 
-function events(state = {
-	events: [],
+function event(state = {
+	event: {},
 	isFetching: false
 }, action) {
+	console.log("ACTION", action);
 	switch (action.type) {
-		case RECEIVE_EVENTS:
+		case RECEIVE_EVENT:
 			return {
 				...state,
 				isFetching: false,
-				events: action.events
+				event: action.event
 			};
-		case REQUEST_EVENTS:
+		case REQUEST_EVENT:
 			return {
 				...state,
 				isFetching: true
@@ -24,4 +25,4 @@ function events(state = {
 	}
 }
 
-export default events;
+export default event;
