@@ -1,20 +1,20 @@
 import {
-	RECEIVE_EVENT,
-	REQUEST_EVENT
+	RECEIVE_ACCOUNT,
+	REQUEST_ACCOUNT
 } from '../actions';
 
-function event(state = {
-	event: {},
+function account(state = {
+	account: {},
 	isFetching: false
 }, action) {
 	switch (action.type) {
-		case RECEIVE_EVENT:
+		case RECEIVE_ACCOUNT:
 			return {
 				...state,
 				isFetching: false,
-				event: action.event
+				account: action.account
 			};
-		case REQUEST_EVENT:
+		case REQUEST_ACCOUNT:
 			return {
 				...state,
 				isFetching: true
@@ -24,4 +24,4 @@ function event(state = {
 	}
 }
 
-export default event;
+export default account;

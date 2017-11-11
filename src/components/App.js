@@ -13,6 +13,7 @@ import Events from '../containers/Events';
 import Event from '../containers/Event';
 import Login from '../containers/Login';
 import Logout from '../containers/Logout';
+import Account from '../containers/Account';
 import Nav from './ui/Nav';
 
 const App = (props) => {
@@ -21,9 +22,10 @@ const App = (props) => {
 	const redirect = !isLogged ? <Redirect to="/login"/> : <Redirect to="/events"/>;
 	const contentContent = isLogged
         ? [
-            <Route path="/events/:id" component={Event} />,
-            <Route exact path="/events" component={Events} />,
-            <Route path="/logout" component={Logout} />
+            <Route path="/events/:id" component={Event} key={1} />,
+            <Route exact path="/events" component={Events} key={2} />,
+            <Route path="/logout" component={Logout} key={3} />,
+            <Route path="/account" component={Account} key={4} />
         ]
         : <Route path="/login" component={Login}/>;
 

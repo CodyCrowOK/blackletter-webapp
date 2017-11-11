@@ -8,6 +8,7 @@ const Event = props => {
 		<div>
 			<Link className="btn btn-default" to="/events"><span className="glyphicon glyphicon-arrow-left"></span> Back to Events</Link>
 			<h2>{event.name}</h2>
+			<hr />
 		</div>
 	);
 };

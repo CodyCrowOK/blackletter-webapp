@@ -1,4 +1,3 @@
-// import { } from '../actions';
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import EventsComponent from '../components/ui/Events';
@@ -10,11 +9,11 @@ class AsyncEvents extends Component {
 		this.state = this.getStateFor(props);
 	}
 
-	getStateFor = props => {
+	getStateFor(props) {
 		return {
 			events: props.events
 		};
-	};
+	}
 
 	componentDidMount() {
 		const {dispatch, userId} = this.props;

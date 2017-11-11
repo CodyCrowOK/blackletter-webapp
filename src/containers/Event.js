@@ -9,10 +9,12 @@ class Event extends Component {
 		this.state = this.getStateFor(props);
 	}
 
-	getStateFor = props => ({
-		eventId: props.match.params.id,
-		event: props.event || {}
-	});
+	getStateFor(props) {
+		return {
+			eventId: props.match.params.id,
+			event: props.event || {}
+		};
+	}
 
 	componentDidMount() {
 		const {dispatch} = this.props;
