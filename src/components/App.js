@@ -14,6 +14,7 @@ import Event from '../containers/Event';
 import Login from '../containers/Login';
 import Logout from '../containers/Logout';
 import Account from '../containers/Account';
+import AccountTransactions from '../containers/AccountTransactions';
 import Nav from './ui/Nav';
 
 const App = (props) => {
@@ -25,6 +26,7 @@ const App = (props) => {
             <Route path="/events/:id" component={Event} key={1} />,
             <Route exact path="/events" component={Events} key={2} />,
             <Route path="/logout" component={Logout} key={3} />,
+            <Route path="/account/transactions" component={AccountTransactions} key={5} />,
             <Route path="/account" component={Account} key={4} />
         ]
         : <Route path="/login" component={Login}/>;
