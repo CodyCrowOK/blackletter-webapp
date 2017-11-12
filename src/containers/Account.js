@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import AccountComponent from '../components/ui/Account';
-import {fetchAccount} from '../actions';
+import {fetchAccount, updateUser} from '../actions';
 
 class Account extends Component {
 	constructor(props) {
@@ -22,9 +22,15 @@ class Account extends Component {
 		dispatch(fetchAccount(userId));
 	}
 
+	updateUser = payload => {
+		const {dispatch} = this.props;
+		const userId = localStorage.getItem('userId');
+		dispatch(updateUser(userId, payload));
+	};
+
 	render() {
 		const {account} = this.props;
-		return <AccountComponent account={account} />;
+		return <AccountComponent account={account} updateUser={this.updateUser} />;
 	}
 }
 

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import './Account.css';
 
-const Account = ({account}) => {
+const Account = ({account, updateUser}) => {
 
 	// For testing
 	account.paymentMethods = account.paymentMethods || [
@@ -41,13 +41,19 @@ const Account = ({account}) => {
 		</tr>
 	);
 
+	const onUserSubmit = e => {
+		e.preventDefault();
+
+		
+	};
+
 	return (
 		<div>
 			<h2>Account</h2>
 			<hr />
 			<h3>Personal Information</h3>
 			<p className="text-warning">Note: Changing this information may affect your payment information.</p>
-			<form className="form-horizontal">
+			<form className="form-horizontal" onSubmit={onUserSubmit}>
 				<div className="form-group">
 					<label htmlFor="name" className="col-sm-1 control-label">Full Name</label>
 					<div className="col-sm-11"><input type="text" className="form-control" id="name" placeholder={account.name} /></div>
@@ -64,7 +70,7 @@ const Account = ({account}) => {
 			</form>
 
 			<h3>Change Password</h3>
-			<p className="text-info"><a href="https://www.xkcd.com/936/">Choose something long and easy to remember.</a></p>
+			<p className="text-info"><a target="_blank" href="https://www.xkcd.com/936/">Choose something long and easy to remember.</a></p>
 			<form className="form-horizontal">
 				<div className="form-group">
 					<label htmlFor="new-password" className="col-sm-1 control-label">New Password</label>
