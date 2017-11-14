@@ -20,7 +20,7 @@ function receiveAccount(userId, json) {
 	};
 }
 
-function updateUser(userId) {
+function updateUserAction(userId) {
 	return {
 		type: UPDATE_USER,
 		userId
@@ -38,13 +38,15 @@ export function fetchAccount(userId) {
 
 export function updateUser(userId, payload) {
 	return dispatch => {
-		const options = {
+		const opts = {
 			method: 'PUT',
 			body: JSON.stringify(payload)
 		};
 
-		dispatch(updateUser(userId));
-		return fetch(api.userById(userId), options)
+		console.log(opts)
+
+		dispatch(updateUserAction(userId));
+		return fetch(api.userById(userId), opts)
 			.then(r => r.json())
 			.then(json => dispatch(receiveAccount(userId, json)));
 	}

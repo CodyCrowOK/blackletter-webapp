@@ -36,7 +36,7 @@ class Account extends Component {
 
 const mapStateToProps = state => ({
 	account: state.account.account || {},
-	isFetching: true
+	isFetching: false
 });
 
 export default connect(mapStateToProps)(Account);
